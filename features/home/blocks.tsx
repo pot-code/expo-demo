@@ -4,8 +4,15 @@ import { Text } from "../../components/themed"
 import colors from "../../constants/colors"
 import components from "../../constants/components"
 import sizes from "../../constants/sizes"
+import { useCallback, useState } from "react"
 
 export default function Blocks() {
+  const [value, setValue] = useState(1)
+
+  const onSliderValueChange = useCallback((value: number) => {
+    setValue(value)
+  }, [])
+
   return (
     <View style={components.card}>
       <View style={styles.title}>
@@ -13,7 +20,7 @@ export default function Blocks() {
         <Text style={{ color: colors.text.gray }}>Max.20</Text>
       </View>
       <View style={styles.body}>
-        <Text style={{ fontSize: sizes.font.xxxl, fontFamily: "Mono", textAlign: "center" }}>16</Text>
+        <Text style={{ fontSize: sizes.font.xxxl, fontFamily: "Mono", textAlign: "center" }}>{value}</Text>
       </View>
       <Slider
         style={{ height: 40 }}
@@ -23,6 +30,7 @@ export default function Blocks() {
         thumbTintColor={colors.brand.default}
         minimumTrackTintColor={colors.brand.default}
         maximumTrackTintColor={colors.text.gray}
+        onValueChange={onSliderValueChange}
       />
     </View>
   )
