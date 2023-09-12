@@ -1,6 +1,6 @@
 import { Stack } from "expo-router"
 import { StatusBar } from "expo-status-bar"
-import { StyleSheet, View } from "react-native"
+import { ScrollView, StyleSheet, View } from "react-native"
 
 import { AntDesign } from "@expo/vector-icons"
 import { Text } from "../components/themed"
@@ -26,34 +26,39 @@ export default function Home() {
         }}
       />
       <StatusBar style="light" />
-      <Blocks />
-      <Ratio />
-      <View style={styles.row}>
-        <RowNumber />
-        <Caption />
-      </View>
-      <View style={styles.row}>
-        <Radius />
-        <Padding />
-      </View>
-      <View style={styles.row}>
-        <Library />
-        <DarkMode />
-      </View>
-      <View style={styles.generate}>
-        <Text style={{ color: colors.black, fontSize: sizes.font.lg, fontWeight: "600" }}>Generate</Text>
-        <AntDesign name="retweet" size={sizes.font.lg} />
-      </View>
+      <ScrollView contentContainerStyle={styles.content}>
+        <Blocks />
+        <Ratio />
+        <View style={styles.row}>
+          <RowNumber />
+          <Caption />
+        </View>
+        <View style={styles.row}>
+          <Radius />
+          <Padding />
+        </View>
+        <View style={styles.row}>
+          <Library />
+          <DarkMode />
+        </View>
+        <View style={styles.generate}>
+          <Text style={{ color: colors.black, fontSize: sizes.font.lg, fontWeight: "600" }}>Generate</Text>
+          <AntDesign name="retweet" size={sizes.font.lg} />
+        </View>
+      </ScrollView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    gap: sizes.spacing.default,
     flex: 1,
-    padding: sizes.spacing.default,
     backgroundColor: colors.background.view,
+  },
+  content: {
+    padding: sizes.spacing.default,
+    paddingBottom: sizes.spacing.lg,
+    gap: sizes.spacing.default,
   },
   header: {
     position: "absolute",
@@ -70,6 +75,7 @@ const styles = StyleSheet.create({
   },
   generate: {
     flex: 1,
+    minHeight: 64,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",

@@ -18,7 +18,7 @@ export default function RowNumber() {
           <FontAwesome name="plus" size={sizes.font.md} />
         </View>
       </View>
-      <Text style={{ fontWeight: "bold", textAlign: "center" }}>Rows</Text>
+      <Text>Rows</Text>
     </View>
   )
 }
@@ -26,6 +26,7 @@ export default function RowNumber() {
 export const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
+    alignItems: "center",
   },
   counter: {
     flexDirection: "row",

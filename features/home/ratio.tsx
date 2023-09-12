@@ -20,16 +20,16 @@ export default function Ratio() {
         />
       </View>
       <View style={[components.card, styles.card]}>
-        <Text>16:9</Text>
+        <Text style={styles.text}>16:9</Text>
       </View>
       <View style={[components.card, styles.card]}>
-        <Text>5:7</Text>
+        <Text style={styles.text}>5:7</Text>
       </View>
       <View style={[components.card, styles.card]}>
-        <Text>1:1</Text>
+        <Text style={styles.text}>1:1</Text>
       </View>
       <View style={[components.card, styles.card]}>
-        <Text>Free</Text>
+        <Text style={styles.text}>Free</Text>
       </View>
     </View>
   )
@@ -41,5 +41,8 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    fontSize: sizes.font.md,
   },
 })
