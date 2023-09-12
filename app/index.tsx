@@ -53,7 +53,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.background.view,
+    backgroundColor: colors.background,
   },
   content: {
     padding: sizes.spacing.default,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: colors.background.view,
+    backgroundColor: colors.background,
   },
   row: {
     flexDirection: "row",

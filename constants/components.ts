@@ -6,8 +6,8 @@ export default StyleSheet.create({
   card: {
     borderWidth: 1,
     borderStyle: "solid",
+    backgroundColor: "#202020",
     borderRadius: sizes.radius.default,
-    backgroundColor: colors.background.component,
     borderColor: colors.border,
     padding: sizes.spacing.md,
   },

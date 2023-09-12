@@ -1,8 +1,5 @@
 export default {
-  background: {
-    view: "#121212",
-    component: "#202020",
-  },
+  background: "#121212",
   border: "#2A2A2A",
   brand: {
     default: "#D2FF75",
@@ -12,4 +9,5 @@ export default {
     gray: "#4E4E4E",
   },
   black: "#000000",
+  white: "#FFFFFF",
 }
