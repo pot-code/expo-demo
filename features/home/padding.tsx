@@ -13,7 +13,7 @@ export default function Padding() {
       </View>
       <View style={styles.footer}>
         <Text style={{ fontWeight: "bold" }}>Padding</Text>
-        <Text style={{ fontSize: sizes.font.xxl, fontWeight: "bold" }}>8</Text>
+        <Text style={{ fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>8</Text>
       </View>
     </View>
   )

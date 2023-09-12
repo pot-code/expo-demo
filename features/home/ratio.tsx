@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react"
-import { Pressable, PressableProps, StyleProp, StyleSheet, View } from "react-native"
+import { Pressable, StyleSheet, View } from "react-native"
 import { Text } from "../../components/themed"
 import colors from "../../constants/colors"
 import components from "../../constants/components"
@@ -18,7 +18,7 @@ function RatioButton({ children, value, selected, onPress }: RatioButtonProps) {
   }, [])
 
   return (
-    <Pressable style={[components.card, styles.card, selected && styles.selected]} onPressIn={handlePress}>
+    <Pressable style={[components.card, styles.card, selected && styles.selectedBackground]} onPressIn={handlePress}>
       {children}
     </Pressable>
   )
@@ -27,20 +27,14 @@ function RatioButton({ children, value, selected, onPress }: RatioButtonProps) {
 export default function Ratio() {
   const selections = useMemo(() => ["16:9", "5:7", "1:1", "Free"], [])
   const [selection, setSelection] = useState(selections[0])
-  console.log("🚀 ~ file: ratio.tsx:29 ~ Ratio ~ selection:", selection)
+
   const onPress = useCallback((value: string) => {
     setSelection(value)
-  }, [])
-  const onDefaultRatioPress = useCallback(() => {
-    setSelection("default")
   }, [])
 
   return (
     <View style={{ flexDirection: "row", gap: sizes.spacing.default }}>
-      <Pressable
-        style={[components.card, styles.card, selection === "default" && styles.selected]}
-        onPress={onDefaultRatioPress}
-      >
+      <View style={[components.card, styles.card, selection === "default" && styles.selectedBackground]}>
         <View
           style={{
             width: "80%",
@@ -50,10 +44,10 @@ export default function Ratio() {
             borderWidth: 2,
           }}
         />
-      </Pressable>
+      </View>
       {selections.map((value) => (
         <RatioButton key={value} selected={value === selection} value={value} onPress={onPress}>
-          <Text style={styles.text}>{value}</Text>
+          <Text style={[styles.text, selection === value && styles.selectedColor]}>{value}</Text>
         </RatioButton>
       ))}
     </View>
@@ -66,11 +60,15 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     alignItems: "center",
     justifyContent: "center",
+    padding: sizes.spacing.xs,
   },
   text: {
     fontSize: sizes.font.md,
   },
-  selected: {
-    borderColor: colors.brand.default,
+  selectedBackground: {
+    backgroundColor: colors.brand.active,
+  },
+  selectedColor: {
+    color: colors.brand.default,
   },
 })

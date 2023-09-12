@@ -27,6 +27,12 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   icon: {
-    // TODO: glow effect
+    shadowColor: colors.brand.default,
+    shadowOpacity: 0.5,
+    shadowRadius: sizes.spacing.default,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
   },
 })

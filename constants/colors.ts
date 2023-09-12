@@ -3,6 +3,7 @@ export default {
   border: "#3A3A3A",
   brand: {
     default: "#D9FE87",
+    active: "#3B3F34",
   },
   text: {
     default: "#FFFFFF",

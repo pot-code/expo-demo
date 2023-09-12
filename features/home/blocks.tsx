@@ -13,7 +13,7 @@ export default function Blocks() {
         <Text style={{ color: colors.text.gray }}>Max.20</Text>
       </View>
       <View style={styles.body}>
-        <Text style={{ fontSize: 96, fontWeight: "500", textAlign: "center" }}>16</Text>
+        <Text style={{ fontSize: sizes.font.xxxl, fontFamily: "Mono", textAlign: "center" }}>16</Text>
       </View>
       <Slider
         style={{ height: 40 }}

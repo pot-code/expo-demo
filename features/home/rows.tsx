@@ -13,7 +13,7 @@ export default function RowNumber() {
         <View style={styles.iconButton}>
           <FontAwesome name="minus" size={sizes.font.md} />
         </View>
-        <Text style={{ fontSize: sizes.font.xxl, fontWeight: "bold" }}>7</Text>
+        <Text style={{ fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>7</Text>
         <View style={styles.iconButton}>
           <FontAwesome name="plus" size={sizes.font.md} />
         </View>

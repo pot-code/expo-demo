@@ -13,7 +13,9 @@ export default function Radius() {
       </View>
       <View style={styles.footer}>
         <Text style={{ fontWeight: "bold" }}>Radius</Text>
-        <Text style={{ color: colors.text.gray, fontSize: sizes.font.xxl, fontWeight: "bold" }}>00</Text>
+        <Text style={{ color: colors.text.gray, fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>
+          00
+        </Text>
       </View>
     </View>
   )
