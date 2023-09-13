@@ -25,18 +25,14 @@ export default function RowNumber() {
     <View style={[components.card.default, styles.container]}>
       <View style={styles.counter}>
         <Pressable
-          style={({ pressed }) =>
-            pressed ? [styles.iconButton, components.button.pressed] : [styles.iconButton, components.button.default]
-          }
+          style={({ pressed }) => [styles.iconButton, pressed ? components.button.pressed : components.button.default]}
           onPress={onDecrement}
         >
           <FontAwesome name="minus" size={sizes.font.md} />
         </Pressable>
         <Text style={{ fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>{value}</Text>
         <Pressable
-          style={({ pressed }) =>
-            pressed ? [styles.iconButton, components.button.pressed] : [styles.iconButton, components.button.default]
-          }
+          style={({ pressed }) => [styles.iconButton, pressed ? components.button.pressed : components.button.default]}
           onPress={onIncrement}
         >
           <FontAwesome name="plus" size={sizes.font.md} />

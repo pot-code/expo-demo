@@ -43,9 +43,7 @@ export default function Home() {
           <DarkMode />
         </View>
         <Pressable
-          style={({ pressed }) =>
-            pressed ? [components.button.pressed, styles.generate] : [components.button.default, styles.generate]
-          }
+          style={({ pressed }) => [styles.generate, pressed ? components.button.pressed : components.button.default]}
         >
           <Text style={{ color: colors.black, fontSize: sizes.font.lg, fontWeight: "600" }}>Generate</Text>
           <AntDesign name="retweet" size={sizes.font.lg} />
