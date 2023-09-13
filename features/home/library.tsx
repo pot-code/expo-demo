@@ -4,7 +4,7 @@ import { Text } from "../../components/themed"
 
 export default function Library() {
   return (
-    <View style={[components.card, styles.container]}>
+    <View style={[components.card.default, styles.container]}>
       <Text>Color library</Text>
     </View>
   )

@@ -7,7 +7,7 @@ import sizes from "../../constants/sizes"
 
 export default function Radius() {
   return (
-    <View style={[components.card, styles.container]}>
+    <View style={[components.card.default, styles.container]}>
       <View>
         <MaterialCommunityIcons name="rounded-corner" color={colors.text.default} size={sizes.font.lg} />
       </View>

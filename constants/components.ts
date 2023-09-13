@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native"
 import colors from "./colors"
 import sizes from "./sizes"
 
-export default StyleSheet.create({
-  card: {
+const card = StyleSheet.create({
+  default: {
     borderWidth: 1,
     borderStyle: "solid",
     backgroundColor: "#202020",
@@ -12,3 +12,17 @@ export default StyleSheet.create({
     padding: sizes.spacing.md,
   },
 })
+
+const button = StyleSheet.create({
+  default: {
+    backgroundColor: colors.brand.default,
+  },
+  pressed: {
+    backgroundColor: colors.brand["500"],
+  },
+})
+
+export default {
+  card,
+  button,
+}

@@ -5,7 +5,7 @@ import sizes from "../../constants/sizes"
 
 export default function Caption() {
   return (
-    <View style={[components.card, styles.container]}>
+    <View style={[components.card.default, styles.container]}>
       <View>
         <Text>CC</Text>
       </View>

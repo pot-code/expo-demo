@@ -14,7 +14,7 @@ export default function Blocks() {
   }, [])
 
   return (
-    <View style={components.card}>
+    <View style={components.card.default}>
       <View style={styles.title}>
         <Text style={{ fontWeight: "bold" }}>Blocks</Text>
         <Text style={{ color: colors.text.gray }}>Max.20</Text>

@@ -18,7 +18,7 @@ function RatioButton({ children, value, selected, onPress }: RatioButtonProps) {
   }, [])
 
   return (
-    <Pressable style={[components.card, styles.card, selected && styles.selectedBackground]} onPressIn={handlePress}>
+    <Pressable style={[components.card.default, styles.card, selected && styles.selectedRatio]} onPressIn={handlePress}>
       {children}
     </Pressable>
   )
@@ -34,7 +34,7 @@ export default function Ratio() {
 
   return (
     <View style={{ flexDirection: "row", gap: sizes.spacing.default }}>
-      <View style={[components.card, styles.card, selection === "default" && styles.selectedBackground]}>
+      <View style={[components.card.default, styles.card, selection === "default" && styles.selectedRatio]}>
         <View
           style={{
             width: "80%",
@@ -47,7 +47,7 @@ export default function Ratio() {
       </View>
       {selections.map((value) => (
         <RatioButton key={value} selected={value === selection} value={value} onPress={onPress}>
-          <Text style={[styles.text, selection === value && styles.selectedColor]}>{value}</Text>
+          <Text style={[styles.text, selection === value && styles.selectedTextColor]}>{value}</Text>
         </RatioButton>
       ))}
     </View>
@@ -65,10 +65,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: sizes.font.md,
   },
-  selectedBackground: {
-    backgroundColor: colors.brand.active,
+  selectedRatio: {
+    backgroundColor: colors.brand["900"],
+    borderColor: colors.brand["600"],
   },
-  selectedColor: {
+  selectedTextColor: {
     color: colors.brand.default,
   },
 })

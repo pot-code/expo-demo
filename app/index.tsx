@@ -1,6 +1,6 @@
 import { Stack } from "expo-router"
 import { StatusBar } from "expo-status-bar"
-import { ScrollView, StyleSheet, View } from "react-native"
+import { Pressable, ScrollView, StyleSheet, View } from "react-native"
 
 import { AntDesign } from "@expo/vector-icons"
 import { Text } from "../components/themed"
@@ -14,6 +14,7 @@ import Padding from "../features/home/padding"
 import Radius from "../features/home/radius"
 import Ratio from "../features/home/ratio"
 import RowNumber from "../features/home/rows"
+import components from "../constants/components"
 
 export default function Home() {
   return (
@@ -41,10 +42,14 @@ export default function Home() {
           <Library />
           <DarkMode />
         </View>
-        <View style={styles.generate}>
+        <Pressable
+          style={({ pressed }) =>
+            pressed ? [components.button.pressed, styles.generate] : [components.button.default, styles.generate]
+          }
+        >
           <Text style={{ color: colors.black, fontSize: sizes.font.lg, fontWeight: "600" }}>Generate</Text>
           <AntDesign name="retweet" size={sizes.font.lg} />
-        </View>
+        </Pressable>
       </ScrollView>
     </View>
   )
@@ -80,7 +85,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     borderRadius: sizes.radius.default,
-    backgroundColor: colors.brand.default,
     gap: sizes.spacing.default,
   },
 })

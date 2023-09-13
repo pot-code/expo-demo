@@ -7,7 +7,7 @@ import colors from "../../constants/colors"
 
 export default function DarkMode() {
   return (
-    <View style={[components.card, styles.container]}>
+    <View style={[components.card.default, styles.container]}>
       <View style={styles.iconContainer}>
         <Ionicons name="moon" size={sizes.font.xxl} color={colors.brand.default} style={styles.icon} />
       </View>

@@ -1,22 +1,46 @@
-import { StyleSheet, View } from "react-native"
+import { Pressable, StyleSheet, View } from "react-native"
 import { Text } from "../../components/themed"
 import components from "../../constants/components"
 import sizes from "../../constants/sizes"
 import colors from "../../constants/colors"
 import { FontAwesome } from "@expo/vector-icons"
+import { useCallback, useState } from "react"
 
-// TODO: mono font
+function threshold(value: number) {
+  return Math.max(1, Math.min(9, value))
+}
+
 export default function RowNumber() {
+  const [value, setValue] = useState(1)
+
+  const onIncrement = useCallback(() => {
+    setValue((prev) => threshold(prev + 1))
+  }, [])
+
+  const onDecrement = useCallback(() => {
+    setValue((prev) => threshold(prev - 1))
+  }, [])
+
   return (
-    <View style={[components.card, styles.container]}>
+    <View style={[components.card.default, styles.container]}>
       <View style={styles.counter}>
-        <View style={styles.iconButton}>
+        <Pressable
+          style={({ pressed }) =>
+            pressed ? [styles.iconButton, components.button.pressed] : [styles.iconButton, components.button.default]
+          }
+          onPress={onDecrement}
+        >
           <FontAwesome name="minus" size={sizes.font.md} />
-        </View>
-        <Text style={{ fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>7</Text>
-        <View style={styles.iconButton}>
+        </Pressable>
+        <Text style={{ fontSize: sizes.font.xxl, fontFamily: "Mono", fontWeight: "bold" }}>{value}</Text>
+        <Pressable
+          style={({ pressed }) =>
+            pressed ? [styles.iconButton, components.button.pressed] : [styles.iconButton, components.button.default]
+          }
+          onPress={onIncrement}
+        >
           <FontAwesome name="plus" size={sizes.font.md} />
-        </View>
+        </Pressable>
       </View>
       <Text>Rows</Text>
     </View>
