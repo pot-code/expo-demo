@@ -47,7 +47,7 @@ export default function Ratio() {
       </View>
       {selections.map((value) => (
         <RatioButton key={value} selected={value === selection} value={value} onPress={onPress}>
-          <Text style={[styles.text, selection === value && styles.selectedTextColor]}>{value}</Text>
+          <Text style={[styles.text, selection === value && styles.selectedText]}>{value}</Text>
         </RatioButton>
       ))}
     </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.brand["900"],
     borderColor: colors.brand["600"],
   },
-  selectedTextColor: {
+  selectedText: {
     color: colors.brand.default,
   },
 })
