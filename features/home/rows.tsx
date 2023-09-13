@@ -58,7 +58,6 @@ export const styles = StyleSheet.create({
     aspectRatio: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.brand.default,
     borderRadius: sizes.radius.default,
     padding: sizes.spacing.default,
     height: sizes.spacing.lg,
